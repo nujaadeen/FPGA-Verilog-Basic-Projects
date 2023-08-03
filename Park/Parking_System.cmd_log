@@ -1,0 +1,22 @@
+xst -intstyle ise -ifn "/home/dakshina/Desktop/Exmo/Park/Parking_System.xst" -ofn "/home/dakshina/Desktop/Exmo/Park/Parking_System.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s250e-cp132-4 Parking_System.ngc Parking_System.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Parking_System_map.ncd Parking_System.ngd Parking_System.pcf 
+par -w -intstyle ise -ol high -t 1 Parking_System_map.ncd Parking_System.ncd Parking_System.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Parking_System.twx Parking_System.ncd -o Parking_System.twr Parking_System.pcf 
+xst -intstyle ise -ifn "/home/dakshina/Desktop/Exmo/Park/Parking_System.xst" -ofn "/home/dakshina/Desktop/Exmo/Park/Parking_System.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2_100_250_master.ucf -p xc3s250e-cp132-4 Parking_System.ngc Parking_System.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Parking_System_map.ncd Parking_System.ngd Parking_System.pcf 
+par -w -intstyle ise -ol high -t 1 Parking_System_map.ncd Parking_System.ncd Parking_System.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Parking_System.twx Parking_System.ncd -o Parking_System.twr Parking_System.pcf -ucf Basys2_100_250_master.ucf 
+bitgen -intstyle ise -f Parking_System.ut Parking_System.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2_100_250_master.ucf -p xc3s250e-cp132-4 Parking_System.ngc Parking_System.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Parking_System_map.ncd Parking_System.ngd Parking_System.pcf 
+par -w -intstyle ise -ol high -t 1 Parking_System_map.ncd Parking_System.ncd Parking_System.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Parking_System.twx Parking_System.ncd -o Parking_System.twr Parking_System.pcf -ucf Basys2_100_250_master.ucf 
+bitgen -intstyle ise -f Parking_System.ut Parking_System.ncd 
+xst -intstyle ise -ifn "/home/dakshina/Desktop/Exmo/Park/Parking_System.xst" -ofn "/home/dakshina/Desktop/Exmo/Park/Parking_System.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2_100_250_master.ucf -p xc3s250e-cp132-4 Parking_System.ngc Parking_System.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Parking_System_map.ncd Parking_System.ngd Parking_System.pcf 
+par -w -intstyle ise -ol high -t 1 Parking_System_map.ncd Parking_System.ncd Parking_System.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Parking_System.twx Parking_System.ncd -o Parking_System.twr Parking_System.pcf -ucf Basys2_100_250_master.ucf 
+bitgen -intstyle ise -f Parking_System.ut Parking_System.ncd 

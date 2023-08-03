@@ -1,0 +1,54 @@
+xst -intstyle ise -ifn "/home/dakshina/Desktop/Exmo/ATM/ATM_Machine/Top_Module.xst" -ofn "/home/dakshina/Desktop/Exmo/ATM/ATM_Machine/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s250e-cp132-4 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -t 1 Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf 
+xst -intstyle ise -ifn "/home/dakshina/Desktop/Exmo/ATM/ATM_Machine/Top_Module.xst" -ofn "/home/dakshina/Desktop/Exmo/ATM/ATM_Machine/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2_100_250_master.ucf -p xc3s250e-cp132-4 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -t 1 Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf Basys2_100_250_master.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2_100_250_master.ucf -p xc3s250e-cp132-4 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -t 1 Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf Basys2_100_250_master.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2_100_250_master.ucf -p xc3s250e-cp132-4 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -t 1 Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf Basys2_100_250_master.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2_100_250_master.ucf -p xc3s250e-cp132-4 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -t 1 Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf Basys2_100_250_master.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "/home/dakshina/Desktop/Exmo/ATM/ATM_Machine/Top_Module.xst" -ofn "/home/dakshina/Desktop/Exmo/ATM/ATM_Machine/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2_100_250_master.ucf -p xc3s250e-cp132-4 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -t 1 Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf Basys2_100_250_master.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "/home/dakshina/Desktop/Exmo/ATM/ATM_Machine/Top_Module.xst" -ofn "/home/dakshina/Desktop/Exmo/ATM/ATM_Machine/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2_100_250_master.ucf -p xc3s250e-cp132-4 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -t 1 Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf Basys2_100_250_master.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "/home/dakshina/Desktop/Exmo/ATM/ATM_Machine/Top_Module.xst" -ofn "/home/dakshina/Desktop/Exmo/ATM/ATM_Machine/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2_100_250_master.ucf -p xc3s250e-cp132-4 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -t 1 Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf Basys2_100_250_master.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2_100_250_master.ucf -p xc3s250e-cp132-4 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -t 1 Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf Basys2_100_250_master.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2_100_250_master.ucf -p xc3s250e-cp132-4 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -t 1 Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf Basys2_100_250_master.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 

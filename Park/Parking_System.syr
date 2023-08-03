@@ -1,0 +1,502 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: Parking_System.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Parking_System.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Parking_System"
+Output Format                      : NGC
+Target Device                      : xc3s250e-4-cp132
+
+---- Source Options
+Top Module Name                    : Parking_System
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "slowclock.v" in library work
+Compiling verilog file "seven_seg.v" in library work
+Module <slowclock_100Hz> compiled
+Compiling verilog file "Parking_System.v" in library work
+Module <seven_seg> compiled
+Module <Parking_System> compiled
+No errors in compilation
+Analysis of file <"Parking_System.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Parking_System> in library <work>.
+
+Analyzing hierarchy for module <seven_seg> in library <work>.
+
+Analyzing hierarchy for module <slowclock_100Hz> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Parking_System>.
+Module <Parking_System> is correct for synthesis.
+ 
+Analyzing module <seven_seg> in library <work>.
+Module <seven_seg> is correct for synthesis.
+ 
+Analyzing module <slowclock_100Hz> in library <work>.
+Module <slowclock_100Hz> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <seven_seg>.
+    Related source file is "seven_seg.v".
+WARNING:Xst:737 - Found 7-bit latch for signal <seg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+Unit <seven_seg> synthesized.
+
+
+Synthesizing Unit <slowclock_100Hz>.
+    Related source file is "slowclock.v".
+    Found 1-bit register for signal <clk_out>.
+    Found 21-bit up counter for signal <period_count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <slowclock_100Hz> synthesized.
+
+
+Synthesizing Unit <Parking_System>.
+    Related source file is "Parking_System.v".
+    Found 32x5-bit ROM for signal <parking_slots_available>.
+    Found 4-bit register for signal <an>.
+    Found 1-of-4 decoder for signal <an$mux0000> created at line 122.
+    Found 4-bit register for signal <display>.
+    Found 2-bit up counter for signal <enable>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred   8 D-type flip-flop(s).
+	inferred   1 Decoder(s).
+Unit <Parking_System> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 32x5-bit ROM                                          : 1
+# Counters                                             : 2
+ 2-bit up counter                                      : 1
+ 21-bit up counter                                     : 1
+# Registers                                            : 3
+ 1-bit register                                        : 1
+ 4-bit register                                        : 2
+# Latches                                              : 1
+ 7-bit latch                                           : 1
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <display_3> (without init value) has a constant value of 0 in block <Parking_System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <display<3:3>> (without init value) have a constant value of 0 in block <Parking_System>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 32x5-bit ROM                                          : 1
+# Counters                                             : 2
+ 2-bit up counter                                      : 1
+ 21-bit up counter                                     : 1
+# Registers                                            : 8
+ Flip-Flops                                            : 8
+# Latches                                              : 1
+ 7-bit latch                                           : 1
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <seg_2> (without init value) has a constant value of 0 in block <seven_seg>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Parking_System> ...
+
+Optimizing unit <seven_seg> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Parking_System, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 31
+ Flip-Flops                                            : 31
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Parking_System.ngr
+Top Level Output File Name         : Parking_System
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 22
+
+Cell Usage :
+# BELS                             : 99
+#      GND                         : 1
+#      INV                         : 7
+#      LUT1                        : 21
+#      LUT2                        : 5
+#      LUT3                        : 10
+#      LUT4                        : 6
+#      MUXCY                       : 26
+#      MUXF5                       : 1
+#      VCC                         : 1
+#      XORCY                       : 21
+# FlipFlops/Latches                : 37
+#      FD                          : 1
+#      FDE                         : 7
+#      FDR                         : 23
+#      LD                          : 6
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 21
+#      IBUF                        : 5
+#      OBUF                        : 16
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s250ecp132-4 
+
+ Number of Slices:                       25  out of   2448     1%  
+ Number of Slice Flip Flops:             31  out of   4896     0%  
+ Number of 4 input LUTs:                 49  out of   4896     1%  
+ Number of IOs:                          22
+ Number of bonded IOBs:                  22  out of     92    23%  
+    IOB Flip Flops:                       6
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+sclk/clk_out                       | NONE(display_0)        | 9     |
+clock                              | BUFGP                  | 22    |
+ss0/seg_not0001(ss0/seg_not00011:O)| NONE(*)(ss0/seg_6)     | 6     |
+-----------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 6.147ns (Maximum Frequency: 162.681MHz)
+   Minimum input arrival time before clock: 4.583ns
+   Maximum output required time after clock: 4.368ns
+   Maximum combinational path delay: 6.061ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sclk/clk_out'
+  Clock period: 2.598ns (frequency: 384.911MHz)
+  Total number of paths / destination ports: 17 / 9
+-------------------------------------------------------------------------
+Delay:               2.598ns (Levels of Logic = 1)
+  Source:            enable_0 (FF)
+  Destination:       display_1 (FF)
+  Source Clock:      sclk/clk_out rising
+  Destination Clock: sclk/clk_out rising
+
+  Data Path: enable_0 to display_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              9   0.591   0.995  enable_0 (enable_0)
+     LUT2:I0->O            1   0.704   0.000  Mdecod_an_mux000001 (an_mux0000<3>)
+     FDE:D                     0.308          an_0
+    ----------------------------------------
+    Total                      2.598ns (1.603ns logic, 0.995ns route)
+                                       (61.7% logic, 38.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 6.147ns (frequency: 162.681MHz)
+  Total number of paths / destination ports: 693 / 43
+-------------------------------------------------------------------------
+Delay:               6.147ns (Levels of Logic = 8)
+  Source:            sclk/period_count_4 (FF)
+  Destination:       sclk/clk_out (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: sclk/period_count_4 to sclk/clk_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.622  sclk/period_count_4 (sclk/period_count_4)
+     LUT1:I0->O            1   0.704   0.000  sclk/clk_out_and0000_wg_cy<0>_rt (sclk/clk_out_and0000_wg_cy<0>_rt)
+     MUXCY:S->O            1   0.464   0.000  sclk/clk_out_and0000_wg_cy<0> (sclk/clk_out_and0000_wg_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  sclk/clk_out_and0000_wg_cy<1> (sclk/clk_out_and0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  sclk/clk_out_and0000_wg_cy<2> (sclk/clk_out_and0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  sclk/clk_out_and0000_wg_cy<3> (sclk/clk_out_and0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  sclk/clk_out_and0000_wg_cy<4> (sclk/clk_out_and0000_wg_cy<4>)
+     MUXCY:CI->O          22   0.331   1.164  sclk/clk_out_and0000_wg_cy<5> (sclk/clk_out_and0000)
+     INV:I->O              1   0.704   0.420  sclk/clk_out_not00001_INV_0 (sclk/clk_out_not0000)
+     FDR:R                     0.911          sclk/clk_out
+    ----------------------------------------
+    Total                      6.147ns (3.941ns logic, 2.206ns route)
+                                       (64.1% logic, 35.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sclk/clk_out'
+  Total number of paths / destination ports: 15 / 3
+-------------------------------------------------------------------------
+Offset:              4.583ns (Levels of Logic = 4)
+  Source:            parking_slots<3> (PAD)
+  Destination:       display_0 (FF)
+  Destination Clock: sclk/clk_out rising
+
+  Data Path: parking_slots<3> to display_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.622  parking_slots_3_IBUF (parking_slots_3_IBUF)
+     LUT4:I0->O            1   0.704   0.000  display_and00001 (display_and00001)
+     MUXF5:I1->O           3   0.321   0.706  display_and0000_f5 (display_and0000)
+     LUT3:I0->O            1   0.704   0.000  display_mux0000<3>1 (display_mux0000<3>)
+     FDE:D                     0.308          display_0
+    ----------------------------------------
+    Total                      4.583ns (3.255ns logic, 1.328ns route)
+                                       (71.0% logic, 29.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sclk/clk_out'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            an_3 (FF)
+  Destination:       an<3> (PAD)
+  Source Clock:      sclk/clk_out rising
+
+  Data Path: an_3 to an<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.591   0.420  an_3 (an_3)
+     OBUF:I->O                 3.272          an_3_OBUF (an<3>)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ss0/seg_not0001'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              4.368ns (Levels of Logic = 1)
+  Source:            ss0/seg_6 (LATCH)
+  Destination:       seg<6> (PAD)
+  Source Clock:      ss0/seg_not0001 falling
+
+  Data Path: ss0/seg_6 to seg<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.676   0.420  ss0/seg_6 (ss0/seg_6)
+     OBUF:I->O                 3.272          seg_6_OBUF (seg<6>)
+    ----------------------------------------
+    Total                      4.368ns (3.948ns logic, 0.420ns route)
+                                       (90.4% logic, 9.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Delay:               6.061ns (Levels of Logic = 3)
+  Source:            parking_slots<4> (PAD)
+  Destination:       parking_slots_available<4> (PAD)
+
+  Data Path: parking_slots<4> to parking_slots_available<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.447  parking_slots_4_IBUF (parking_slots_4_IBUF)
+     INV:I->O              1   0.704   0.420  Mrom_parking_slots_available41_INV_0 (parking_slots_available_4_OBUF)
+     OBUF:I->O                 3.272          parking_slots_available_4_OBUF (parking_slots_available<4>)
+    ----------------------------------------
+    Total                      6.061ns (5.194ns logic, 0.867ns route)
+                                       (85.7% logic, 14.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.43 secs
+ 
+--> 
+
+
+Total memory usage is 513748 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

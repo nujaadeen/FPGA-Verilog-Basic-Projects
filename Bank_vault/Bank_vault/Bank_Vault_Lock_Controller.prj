@@ -1,0 +1,2 @@
+verilog work "clock_half_sec.v"
+verilog work "Bank_Vault_Lock_Controller.v"

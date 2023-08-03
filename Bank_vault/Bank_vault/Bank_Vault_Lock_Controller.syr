@@ -1,0 +1,430 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: Bank_Vault_Lock_Controller.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Bank_Vault_Lock_Controller.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Bank_Vault_Lock_Controller"
+Output Format                      : NGC
+Target Device                      : xc3s250e-4-cp132
+
+---- Source Options
+Top Module Name                    : Bank_Vault_Lock_Controller
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "clock_half_sec.v" in library work
+Compiling verilog file "Bank_Vault_Lock_Controller.v" in library work
+Module <clock_half_sec> compiled
+Module <Bank_Vault_Lock_Controller> compiled
+No errors in compilation
+Analysis of file <"Bank_Vault_Lock_Controller.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Bank_Vault_Lock_Controller> in library <work>.
+
+Analyzing hierarchy for module <clock_half_sec> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Bank_Vault_Lock_Controller>.
+Module <Bank_Vault_Lock_Controller> is correct for synthesis.
+ 
+Analyzing module <clock_half_sec> in library <work>.
+Module <clock_half_sec> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <clock_half_sec>.
+    Related source file is "clock_half_sec.v".
+    Found 1-bit register for signal <clock_half>.
+    Found 29-bit up counter for signal <count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <clock_half_sec> synthesized.
+
+
+Synthesizing Unit <Bank_Vault_Lock_Controller>.
+    Related source file is "Bank_Vault_Lock_Controller.v".
+    Found 7-bit register for signal <LED>.
+    Summary:
+	inferred   7 D-type flip-flop(s).
+Unit <Bank_Vault_Lock_Controller> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 29-bit up counter                                     : 1
+# Registers                                            : 2
+ 1-bit register                                        : 1
+ 7-bit register                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 29-bit up counter                                     : 1
+# Registers                                            : 8
+ Flip-Flops                                            : 8
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Bank_Vault_Lock_Controller> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Bank_Vault_Lock_Controller, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 37
+ Flip-Flops                                            : 37
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Bank_Vault_Lock_Controller.ngr
+Top Level Output File Name         : Bank_Vault_Lock_Controller
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 13
+
+Cell Usage :
+# BELS                             : 114
+#      GND                         : 1
+#      INV                         : 10
+#      LUT1                        : 28
+#      LUT4                        : 9
+#      MUXCY                       : 36
+#      VCC                         : 1
+#      XORCY                       : 29
+# FlipFlops/Latches                : 37
+#      FDE                         : 1
+#      FDR                         : 36
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 12
+#      IBUF                        : 4
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s250ecp132-4 
+
+ Number of Slices:                       24  out of   2448     0%  
+ Number of Slice Flip Flops:             37  out of   4896     0%  
+ Number of 4 input LUTs:                 47  out of   4896     0%  
+ Number of IOs:                          13
+ Number of bonded IOBs:                  13  out of     92    14%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+U0/clock_half                      | NONE(LED_1)            | 7     |
+clk                                | BUFGP                  | 30    |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 5.180ns (Maximum Frequency: 193.066MHz)
+   Minimum input arrival time before clock: 4.163ns
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: 6.236ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'U0/clock_half'
+  Clock period: 2.470ns (frequency: 404.858MHz)
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Delay:               2.470ns (Levels of Logic = 1)
+  Source:            LED_1 (FF)
+  Destination:       LED_1 (FF)
+  Source Clock:      U0/clock_half rising
+  Destination Clock: U0/clock_half rising
+
+  Data Path: LED_1 to LED_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.447  LED_1 (LED_1)
+     INV:I->O              1   0.704   0.420  LED_not0001<0>1_INV_0 (LED_not0001<0>)
+     FDR:D                     0.308          LED_1
+    ----------------------------------------
+    Total                      2.470ns (1.603ns logic, 0.867ns route)
+                                       (64.9% logic, 35.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.180ns (frequency: 193.066MHz)
+  Total number of paths / destination ports: 1306 / 60
+-------------------------------------------------------------------------
+Delay:               5.180ns (Levels of Logic = 8)
+  Source:            U0/count_8 (FF)
+  Destination:       U0/count_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: U0/count_8 to U0/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.622  U0/count_8 (U0/count_8)
+     LUT4:I0->O            1   0.704   0.000  U0/clock_half_cmp_eq0000_wg_lut<1> (U0/clock_half_cmp_eq0000_wg_lut<1>)
+     MUXCY:S->O            1   0.464   0.000  U0/clock_half_cmp_eq0000_wg_cy<1> (U0/clock_half_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  U0/clock_half_cmp_eq0000_wg_cy<2> (U0/clock_half_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  U0/clock_half_cmp_eq0000_wg_cy<3> (U0/clock_half_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  U0/clock_half_cmp_eq0000_wg_cy<4> (U0/clock_half_cmp_eq0000_wg_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  U0/clock_half_cmp_eq0000_wg_cy<5> (U0/clock_half_cmp_eq0000_wg_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  U0/clock_half_cmp_eq0000_wg_cy<6> (U0/clock_half_cmp_eq0000_wg_cy<6>)
+     MUXCY:CI->O          30   0.331   1.262  U0/clock_half_cmp_eq0000_wg_cy<7> (U0/clock_half_cmp_eq0000)
+     FDR:R                     0.911          U0/count_0
+    ----------------------------------------
+    Total                      5.180ns (3.296ns logic, 1.884ns route)
+                                       (63.6% logic, 36.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'U0/clock_half'
+  Total number of paths / destination ports: 28 / 7
+-------------------------------------------------------------------------
+Offset:              4.163ns (Levels of Logic = 2)
+  Source:            VP<1> (PAD)
+  Destination:       LED_1 (FF)
+  Destination Clock: U0/clock_half rising
+
+  Data Path: VP<1> to LED_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.622  VP_1_IBUF (VP_1_IBUF)
+     LUT4:I0->O            7   0.704   0.708  Unlock_inv1 (Unlock_inv)
+     FDR:R                     0.911          LED_1
+    ----------------------------------------
+    Total                      4.163ns (2.833ns logic, 1.330ns route)
+                                       (68.1% logic, 31.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'U0/clock_half'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            LED_7 (FF)
+  Destination:       LED<7> (PAD)
+  Source Clock:      U0/clock_half rising
+
+  Data Path: LED_7 to LED<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.447  LED_7 (LED_7)
+     OBUF:I->O                 3.272          LED_7_OBUF (LED<7>)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 4 / 1
+-------------------------------------------------------------------------
+Delay:               6.236ns (Levels of Logic = 3)
+  Source:            Open (PAD)
+  Destination:       Unlock (PAD)
+
+  Data Path: Open to Unlock
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.622  Open_IBUF (Open_IBUF)
+     LUT4:I0->O            1   0.704   0.420  Unlock1 (Unlock_OBUF)
+     OBUF:I->O                 3.272          Unlock_OBUF (Unlock)
+    ----------------------------------------
+    Total                      6.236ns (5.194ns logic, 1.042ns route)
+                                       (83.3% logic, 16.7% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.46 secs
+ 
+--> 
+
+
+Total memory usage is 512996 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

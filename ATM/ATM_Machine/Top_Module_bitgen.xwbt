@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/dakshina/Desktop/Exmo/ATM/ATM_Machine/Top_Module.ncd
+OUTFILE=/home/dakshina/Desktop/Exmo/ATM/ATM_Machine/Top_Module.bit
+FAMILY=Spartan3E
+PART=xc3s250e-4cp132
+WORKINGDIR=/home/dakshina/Desktop/Exmo/ATM/ATM_Machine
+LICENSE=WebPack
+USER_INFO=212096651_0_0_358

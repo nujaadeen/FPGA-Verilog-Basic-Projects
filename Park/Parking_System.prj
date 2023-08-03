@@ -1,0 +1,3 @@
+verilog work "slowclock.v"
+verilog work "seven_seg.v"
+verilog work "Parking_System.v"
